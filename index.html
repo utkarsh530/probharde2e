@@ -19,11 +19,6 @@
   <meta property="og:description" content="ProbHardE2E enforces hard constraints on probabilistic distribution marginals end-to-end, achieving 3–5× speedup and up to 15× lower MSE. ICLR 2026.">
   <meta property="og:url" content="https://utkarsh530.github.io/probharde2e">
   <meta property="og:image" content="https://utkarsh530.github.io/probharde2e/static/images/ProbHardE2E_alg_upt.svg">
-  <meta property="article:published_time" content="2026-01-01T00:00:00.000Z">
-  <meta property="article:author" content="Utkarsh Utkarsh">
-  <meta property="article:section" content="Research">
-  <meta property="article:tag" content="hard constraints">
-  <meta property="article:tag" content="probabilistic forecasting">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -41,76 +36,57 @@
   <meta name="citation_publication_date" content="2026">
   <meta name="citation_conference_title" content="International Conference on Learning Representations">
 
-  <!-- Additional SEO -->
   <meta name="theme-color" content="#2563eb">
+  <meta name="color-scheme" content="light">
 
-  <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
   <title>ProbHardE2E — End-to-End Probabilistic Framework for Learning with Hard Constraints | ICLR 2026</title>
 
-  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg">
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.svg">
 
-  <!-- Critical CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-
-  <!-- Non-critical CSS (async) -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  </noscript>
-
-  <!-- Fonts -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- JS (deferred) -->
+  <!-- MathJax -->
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']], tags: 'ams' },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <!-- JS -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script defer src="static/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "End-to-End Probabilistic Framework for Learning with Hard Constraints",
-    "description": "ProbHardE2E enforces hard constraints on probabilistic distribution marginals end-to-end, achieving 3–5× speedup and up to 15× lower MSE.",
-    "author": [
-      {"@type": "Person", "name": "Utkarsh Utkarsh", "affiliation": {"@type": "Organization", "name": "MIT CSAIL / AWS AI Labs"}},
-      {"@type": "Person", "name": "Danielle Maddix Robinson", "affiliation": {"@type": "Organization", "name": "AWS AI Labs"}},
-      {"@type": "Person", "name": "Ruijun Ma", "affiliation": {"@type": "Organization", "name": "Amazon Supply Chain Optimization Technologies"}},
-      {"@type": "Person", "name": "Michael W. Mahoney", "affiliation": {"@type": "Organization", "name": "Amazon Supply Chain Optimization Technologies"}},
-      {"@type": "Person", "name": "Yuyang Wang", "affiliation": {"@type": "Organization", "name": "AWS AI Labs"}}
-    ],
-    "datePublished": "2026-01-01",
-    "publisher": {"@type": "Organization", "name": "International Conference on Learning Representations"},
-    "url": "https://utkarsh530.github.io/probharde2e",
-    "keywords": ["hard constraints", "probabilistic forecasting", "PDE", "uncertainty quantification", "CRPS"],
-    "isAccessibleForFree": true
-  }
-  </script>
-
-  <!-- Page-specific additions to template CSS -->
   <style>
-    /* Venue badge */
-    .publication-venue {
-      margin: 0 auto 1.5rem;
-    }
+    /* ── Force light mode — no dark mode ever ── */
+    :root { color-scheme: light; }
+    html, body { background: #fff !important; color: #363636 !important; }
 
-    /* Teaser figure instead of video */
+    /* ── Layout ── */
+    .content-section {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .content-section h2.title { margin-top: 0; }
+
+    /* ── Teaser ── */
     .teaser-figure {
       width: 100%;
       border-radius: var(--border-radius-lg);
@@ -120,21 +96,8 @@
       padding: 0.5rem;
     }
 
-    /* Content section prose */
-    .content-section {
-      max-width: 860px;
-      margin: 0 auto;
-    }
-
-    .content-section h2.title {
-      margin-top: 0;
-    }
-
-    /* Figures with captions */
-    .paper-figure {
-      margin: 2rem 0;
-    }
-
+    /* ── Figures ── */
+    .paper-figure { margin: 2rem 0; }
     .paper-figure img {
       width: 100%;
       border-radius: var(--border-radius);
@@ -142,7 +105,6 @@
       background: #fff;
       display: block;
     }
-
     .paper-figure figcaption {
       margin-top: 0.75rem;
       font-size: 0.9rem;
@@ -151,82 +113,189 @@
       text-align: center;
     }
 
-    /* Side-by-side comparison */
-    .comparison-grid {
+    /* ── 1×2 side-by-side grid ── */
+    .fig-grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin: 1.5rem 0;
+      gap: 1.25rem;
+      margin: 1.75rem 0;
+      justify-items: stretch;
+      align-items: start;
     }
+    @media (max-width: 640px) { .fig-grid-2 { grid-template-columns: 1fr; } }
 
-    @media (max-width: 600px) {
-      .comparison-grid { grid-template-columns: 1fr; }
-    }
-
-    .comparison-item figure img {
+    .fig-grid-2 figure {
+      display: flex;
+      flex-direction: column;
       width: 100%;
-      border-radius: var(--border-radius);
-      border: 1px solid var(--border-color);
-      background: #fff;
+      margin: 0;
+      justify-self: stretch;
+      align-self: start;
     }
-
-    .comparison-item figcaption {
-      margin-top: 0.6rem;
-      font-size: 0.88rem;
+    .fig-grid-2 figure:not(:first-child),
+    .fig-grid-2 figure:not(:last-child) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .fig-grid-2 figure .img-wrap {
+      width: 100%;
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+    }
+    .fig-grid-2 figure .img-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .fig-grid-2 figcaption {
+      margin-top: 0.55rem;
+      font-size: 0.85rem;
       color: var(--text-secondary);
       line-height: 1.5;
       text-align: center;
-      padding: 0.5rem 0.75rem;
-      border-radius: 8px;
     }
 
-    .cap-good {
-      background: #f0fff4;
-      border: 1px solid #c6f6d5;
-      color: #276749;
-    }
-
-    .cap-bad {
-      background: #fffbeb;
-      border: 1px solid #fde68a;
-      color: #744210;
-    }
-
-    /* Constraint table */
-    .constraint-table {
-      font-size: 0.9rem;
+    /* ── Method table ── */
+    .method-table {
+      font-size: 0.88rem;
       width: 100%;
       border-collapse: collapse;
       margin: 1.5rem 0;
     }
-
-    .constraint-table th {
+    .method-table th {
       background: var(--background-accent);
       font-weight: 600;
       color: var(--text-primary);
-      padding: 0.75rem 1rem;
+      padding: 0.65rem 0.9rem;
       border: 1px solid var(--border-color);
       text-align: left;
     }
-
-    .constraint-table td {
-      padding: 0.65rem 1rem;
+    .method-table td {
+      padding: 0.6rem 0.9rem;
       border: 1px solid var(--border-color);
       color: var(--text-secondary);
       vertical-align: middle;
     }
+    .method-table tr:nth-child(even) td { background: var(--background-secondary); }
 
-    .constraint-table tr:nth-child(even) td {
-      background: var(--background-secondary);
+    /* ── Results tables ── */
+    .results-table {
+      font-size: 0.82rem;
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0;
+      overflow-x: auto;
+      display: block;
+    }
+    .results-table th {
+      background: var(--background-accent);
+      font-weight: 600;
+      color: var(--text-primary);
+      padding: 0.5rem 0.65rem;
+      border: 1px solid var(--border-color);
+      text-align: center;
+      white-space: nowrap;
+    }
+    .results-table th.left { text-align: left; }
+    .results-table td {
+      padding: 0.45rem 0.65rem;
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      text-align: center;
+      white-space: nowrap;
+    }
+    .results-table td.row-label {
+      font-weight: 600;
+      color: var(--text-primary);
+      text-align: left;
+    }
+    .results-table td.metric {
+      font-style: italic;
+      color: var(--text-secondary);
+      text-align: left;
+      padding-left: 1.2rem;
+    }
+    .results-table td.best { font-weight: 700; color: #1a7a4a; }
+    .results-table tr:nth-child(3n) td { border-bottom: 2px solid var(--border-color); }
+    .results-table .group-sep td { border-top: 2px solid #aaa; }
+
+    .table-caption {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      text-align: center;
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
     }
 
-    /* Poster iframe */
-    .poster-frame {
-      width: 100%;
-      height: 550px;
+    /* ── Section divider ── */
+    .section-divider {
       border: none;
-      border-radius: var(--border-radius-lg);
-      box-shadow: var(--shadow-xl);
+      border-top: 1px solid var(--border-color);
+      margin: 2.5rem 0;
+    }
+
+    /* ── Landscape table ── */
+    .landscape-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin: 1.75rem 0;
+    }
+    .landscape-table thead tr {
+      border-bottom: 2px solid #cbd5e1;
+    }
+    .landscape-table th {
+      padding: 0.65rem 0.75rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-align: center;
+      vertical-align: bottom;
+      line-height: 1.3;
+      background: transparent;
+    }
+    .landscape-table th.col-method { text-align: left; }
+    .landscape-table tbody tr {
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .landscape-table tbody tr:nth-child(odd) { background: #f8fafc; }
+    .landscape-table tbody tr:nth-child(even) { background: #fff; }
+    .landscape-table tbody tr:last-child {
+      border-top: 2px solid #94a3b8;
+      border-bottom: 2px solid #94a3b8;
+    }
+    .landscape-table td {
+      padding: 0.6rem 0.75rem;
+      text-align: center;
+      vertical-align: middle;
+      color: var(--text-secondary);
+    }
+    .landscape-table td.col-method {
+      text-align: left;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+    .landscape-table tr:last-child td.col-method {
+      font-weight: 800;
+      text-decoration: underline;
+      color: var(--text-primary);
+    }
+    .landscape-table .ck  { color: #16a34a; font-size: 1.1rem; }
+    .landscape-table .xm  { color: #dc2626; font-size: 1.1rem; }
+    .landscape-table .ckp { color: #16a34a; font-size: 1.1rem; } /* partial */
+
+    /* ── Callout box ── */
+    .callout {
+      background: #eff6ff;
+      border-left: 4px solid #2563eb;
+      border-radius: 0 8px 8px 0;
+      padding: 0.85rem 1.2rem;
+      margin: 1.5rem 0;
+      font-size: 0.93rem;
+      color: #1e3a6e;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -237,49 +306,6 @@
   <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
-
-  <!-- ========== More Works Dropdown ========== -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View related works">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>Related Works</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <a href="https://proceedings.mlr.press/v202/hansen23a.html" class="work-item" target="_blank" rel="noopener noreferrer">
-          <div class="work-info">
-            <h5>Learning Physical Models that Can Respect Conservation Laws</h5>
-            <p>ProbConserv: probabilistic conservation-law-satisfying surrogates for PDEs (predecessor to this work).</p>
-            <span class="work-venue">ICML 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://proceedings.mlr.press/v235/mouli24a.html" class="work-item" target="_blank" rel="noopener noreferrer">
-          <div class="work-info">
-            <h5>Using Uncertainty Quantification to Characterize and Improve Out-of-Domain Learning for PDEs</h5>
-            <p>UQ-aware PDE surrogates with probabilistic conservation constraints at inference.</p>
-            <span class="work-venue">ICML 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://openreview.net/forum?id=RNnfqef4OI" class="work-item" target="_blank" rel="noopener noreferrer">
-          <div class="work-info">
-            <h5>CLOVER: Probabilistic Forecasting with Coherent Learning Objective Reparameterization</h5>
-            <p>End-to-end hierarchical probabilistic time-series forecasting with coherency constraints.</p>
-            <span class="work-venue">TMLR 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
 
   <main id="main-content">
 
@@ -301,16 +327,16 @@
                 <a href="https://utkarsh530.github.io" target="_blank" rel="noopener noreferrer">Utkarsh Utkarsh</a><sup>1,2</sup>,
               </span>
               <span class="author-block">
-                <a href="#" target="_blank" rel="noopener noreferrer">Danielle Maddix Robinson</a><sup>2</sup>,
+                <a href="https://dcmaddix.github.io/" target="_blank" rel="noopener noreferrer">Danielle Maddix Robinson</a><sup>2</sup>,
               </span>
               <span class="author-block">
-                <a href="#" target="_blank" rel="noopener noreferrer">Ruijun Ma</a><sup>3</sup>,
+                Ruijun Ma<sup>3</sup>,
               </span>
               <span class="author-block">
-                <a href="https://mahoneymw.com" target="_blank" rel="noopener noreferrer">Michael W. Mahoney</a><sup>3</sup>,
+                <a href="https://www.stat.berkeley.edu/~mmahoney/index.html" target="_blank" rel="noopener noreferrer">Michael W. Mahoney</a><sup>3</sup>,
               </span>
               <span class="author-block">
-                <a href="#" target="_blank" rel="noopener noreferrer">Yuyang Wang</a><sup>2</sup>
+                <a href="https://web.mit.edu/~ywang02/www/" target="_blank" rel="noopener noreferrer">Yuyang Wang</a><sup>2</sup>
               </span>
             </div>
 
@@ -325,15 +351,15 @@
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                    <span>Paper</span>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv</span>
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="ai ai-arxiv"></i></span>
-                    <span>arXiv</span>
+                  <a href="https://openreview.net/forum?id=RPowYXiRmW" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>OpenReview</span>
                   </a>
                 </span>
                 <span class="link-block">
@@ -341,12 +367,6 @@
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon"><i class="fab fa-github"></i></span>
                     <span>Code</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="#poster" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="fas fa-file-image"></i></span>
-                    <span>Poster</span>
                   </a>
                 </span>
               </div>
@@ -357,10 +377,9 @@
       </div>
     </div>
   </section>
-  <!-- End Hero -->
 
 
-  <!-- ========== Teaser Figure ========== -->
+  <!-- ========== Teaser ========== -->
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
@@ -369,14 +388,17 @@
           alt="ProbHardE2E algorithm: predictor–corrector pipeline with DPPL"
           loading="eager">
         <h2 class="subtitle has-text-centered" style="margin-top: 1.25rem;">
-          <strong>ProbHardE2E</strong> predicts an unconstrained multivariate distribution (Predictor), then projects
-          it onto the constraint manifold using the Differentiable Probabilistic Projection Layer (Corrector).
-          End-to-end training via closed-form CRPS loss eliminates Monte Carlo sampling — a <strong>3–5× speedup</strong>.
+          ProbHardE2E uses a novel <strong>differentiable probabilistic projection layer (DPPL)</strong>
+          that can be combined with a wide range of neural network architectures, allowing the model to
+          learn the system in an end-to-end manner — compared to other approaches where constraints are
+          satisfied through a post-processing step or at inference only. Using the DPPL to impose
+          constraints directly on the marginals of the multivariate distribution enables an efficient
+          <strong>sampling-free approach</strong> that reduces computational overhead by up to
+          <strong>3–5×</strong> during training.
         </h2>
       </div>
     </div>
   </section>
-  <!-- End Teaser -->
 
 
   <!-- ========== Abstract ========== -->
@@ -387,342 +409,570 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              We present a general purpose probabilistic forecasting framework, <strong>ProbHardE2E</strong>,
-              to learn systems that can incorporate operational/physical constraints as hard requirements.
-              ProbHardE2E enforces hard constraints by exploiting variance information in a novel way,
-              and thus it is also capable of performing uncertainty quantification (UQ) on the model.
-              Our methodology exploits a novel <em>differentiable probabilistic projection layer</em> (DPPL)
-              that can be combined with a wide range of neural network architectures. This DPPL allows the model
-              to learn the system in an end-to-end manner, compared to other approaches where the constraints
-              are satisfied either through a post-processing step or at inference.
+              We present <strong>ProbHardE2E</strong>, a probabilistic forecasting framework that
+              incorporates hard operational/physical constraints and provides uncertainty quantification.
+              Our methodology uses a novel <em>differentiable probabilistic projection layer</em> (DPPL)
+              that can be combined with a wide range of neural network architectures. The DPPL allows the
+              model to learn the system in an end-to-end manner, compared to other approaches where
+              constraints are satisfied either through a post-processing step or at inference.
             </p>
             <p>
-              In addition, ProbHardE2E optimizes a strictly proper scoring rule — the Continuous Ranked
-              Probability Score (CRPS) — without making any distributional assumptions on the target,
-              which enables it to obtain robust distributional estimates. We apply ProbHardE2E to problems
-              in learning partial differential equations (PDEs) with uncertainty estimates and to probabilistic
-              time-series forecasting, showcasing it as a broadly applicable general setup that connects these
-              seemingly disparate domains.
+              ProbHardE2E optimizes a strictly proper scoring rule without making any distributional
+              assumptions on the target, which enables it to obtain robust distributional estimates —
+              in contrast to existing approaches that generally optimize likelihood-based objectives,
+              which can be biased by their distributional assumptions and model choices. It can
+              incorporate a range of non-linear constraints, increasing the power of modeling and
+              flexibility. We apply ProbHardE2E in learning partial differential equations with
+              uncertainty estimates and to probabilistic time-series forecasting, showcasing it as a
+              broadly applicable general framework that connects these seemingly disparate domains.
             </p>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- End Abstract -->
 
 
-  <!-- ========== Problem: What's Hard about Hard Constraints? ========== -->
+  <!-- ========== Problem Setup ========== -->
   <section class="section">
     <div class="container is-max-desktop">
       <div class="content-section">
-        <h2 class="title is-3">What Makes Hard Constraints Hard?</h2>
-
+        <h2 class="title is-3">Landscape of ML with Hard Constraints</h2>
         <div class="content">
           <p>
-            Machine learning models are increasingly applied in settings — hierarchical time-series forecasting,
-            PDE-constrained surrogate modeling, robotics, climate science — where outputs must satisfy
-            known physical or operational constraints exactly. A demand forecast hierarchy must be coherent
-            (forecasts must sum up correctly). A fluid simulation must conserve mass or momentum.
-            An economic prediction must be non-negative. <em>Any</em> violation is unacceptable.
+            Exact enforcement of hard constraints is essential in domains where any violation of
+            operational or physical requirements — coherency in hierarchical forecasting, conservation
+            laws in physics, non-negativity in economics and robotics — is unacceptable.
+            Within ML, constraints are typically incorporated as <strong>soft penalties</strong>
+            (e.g., a regularization term added to the loss), or via <strong>post-training correction
+            mechanisms</strong> to enforce a hard constraint at inference. The aforementioned
+            hard-constrained models typically provide point estimates without uncertainty quantification
+            (UQ), limiting their use cases in operational and physical domains requiring probabilistic
+            forecasts. In both the forecasting and PDE application domains, none of this prior UQ work
+            can handle complex nonlinear (hard) constraints.
           </p>
           <p>
-            Two natural approaches fall short:
-          </p>
-          <ul>
-            <li>
-              <strong>Data ≠ Constraint Manifold.</strong> Probabilistic models learn a broad distribution,
-              not the thin nonlinear manifold <em>C</em> = {<em>x</em> : h(<em>x</em>) = 0}. Samples from
-              the learned distribution generically violate the constraint.
-            </li>
-            <li>
-              <strong>Soft penalties don't guarantee anything.</strong> Penalizing ‖h(<em>û</em>)‖² only
-              <em>reduces</em> violation in expectation — it never eliminates it. There are zero guarantees
-              at sampling time, and the penalty weight becomes a fragile tuning parameter.
-            </li>
-          </ul>
-          <p>
-            Prior works that do enforce constraints exactly either operate on point estimates (no UQ),
-            are restricted to linear constraints, require expensive Monte Carlo sampling during training,
-            or apply constraints only as a post-processing step after training — failing to optimize
-            end-to-end accuracy under the constraint.
+            The table below summarizes advantages and disadvantages of existing methods.
           </p>
 
-          <div class="paper-figure">
-            <img src="static/images/image.png"
-              alt="Comparison table: ProbHardE2E vs prior work across constraint type, end-to-end, UQ, and sampling-free dimensions"
-              loading="lazy">
-            <figcaption>
-              <strong>Comparison of constrained learning methods.</strong>
-              Only ProbHardE2E combines: general nonlinear constraints, end-to-end optimization,
-              probabilistic model with variance estimate, sampling-free training, and exact constraint satisfaction.
-            </figcaption>
+          <div style="overflow-x: auto;">
+          <table class="landscape-table">
+            <thead>
+              <tr>
+                <th class="col-method">Method</th>
+                <th>Domain</th>
+                <th>Constraint<br>Type</th>
+                <th>End-to-<br>End</th>
+                <th>Prob. Model<br>w/ Variance<br>Estimate</th>
+                <th>Sampling-<br>free<br>Training</th>
+                <th>Constraint<br>on<br>Distribution</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-method">HardNet [Min et al.]</td>
+                <td>General</td><td>Convex</td>
+                <td><span class="ck">&#10004;</span></td>
+                <td><span class="xm">&#10008;</span></td>
+                <td><span class="ck">&#10004;</span></td>
+                <td><span class="ck">&#10004;</span></td>
+              </tr>
+              <tr>
+                <td class="col-method">DC3 [Donti et al.]</td>
+                <td>General</td><td>Nonlinear</td>
+                <td><span class="ck">&#10004;</span></td>
+                <td><span class="xm">&#10008;</span></td>
+                <td><span class="ck">&#10004;</span></td>
+                <td><span class="ck">&#10004;</span></td>
+              </tr>
+              <tr>
+                <td class="col-method">Hier-E2E [Rangapuram et al.]</td>
+                <td>Forecasting</td><td>Linear</td>
+                <td><span class="ck">&#10004;</span></td>
+                <td><span class="ck">&#10004;</span></td>
+                <td><span class="xm">&#10008;</span></td>
+                <td><span class="xm">&#10008;</span></td>
+              </tr>
+              <tr>
+                <td class="col-method">CLOVER [Olivares et al.]</td>
+                <td>Forecasting</td><td>Linear</td>
+                <td><span class="ck">&#10004;</span></td>
+                <td><span class="ck">&#10004;</span></td>
+                <td><span class="xm">&#10008;</span></td>
+                <td><span class="ck">&#10004;</span></td>
+              </tr>
+              <tr>
+                <td class="col-method">PDE-CL [Négiar et al.]</td>
+                <td>PDEs</td><td>Nonlinear</td>
+                <td><span class="ck">&#10004;</span></td>
+                <td><span class="xm">&#10008;</span></td>
+                <td><span class="ck">&#10004;</span></td>
+                <td><span class="ckp">&#10004;</span>&thinsp;−</td>
+              </tr>
+              <tr>
+                <td class="col-method">ProbConserv [Hansen et al.]</td>
+                <td>PDEs</td><td>Linear</td>
+                <td><span class="xm">&#10008;</span></td>
+                <td><span class="ck">&#10004;</span></td>
+                <td><span class="ck">&#10004;</span></td>
+                <td><span class="ck">&#10004;</span></td>
+              </tr>
+              <tr>
+                <td class="col-method">HardC [Hansen et al.]</td>
+                <td>PDEs</td><td>Linear</td>
+                <td><span class="xm">&#10008;</span></td>
+                <td><span class="ck">&#10004;</span></td>
+                <td><span class="ck">&#10004;</span></td>
+                <td><span class="ck">&#10004;</span></td>
+              </tr>
+              <tr>
+                <td class="col-method">ProbHardE2E</td>
+                <td>General</td><td>Nonlinear</td>
+                <td><span class="ck">&#10004;</span></td>
+                <td><span class="ck">&#10004;</span></td>
+                <td><span class="ck">&#10004;</span></td>
+                <td><span class="ck">&#10004;</span></td>
+              </tr>
+            </tbody>
+          </table>
           </div>
+
         </div>
       </div>
     </div>
   </section>
 
 
-  <!-- ========== Method: DPPL ========== -->
-  <section class="section hero is-light">
+  <!-- ========== Method ========== -->
+  <section class="section">
     <div class="container is-max-desktop">
       <div class="content-section">
-        <h2 class="title is-3">Differentiable Probabilistic Projection Layer (DPPL)</h2>
+        <h2 class="title is-3">ProbHardE2E: A Unified Probabilistic Optimization Framework</h2>
 
         <div class="content">
           <p>
-            ProbHardE2E follows a <strong>predictor–corrector</strong> paradigm operating on
-            distribution parameters — not on individual samples.
-          </p>
-          <p>
-            <strong>Predictor step.</strong> A probabilistic backbone (e.g., DeepVAR, FNO ensembles,
-            neural processes) outputs an unconstrained multivariate distribution
-            <em>Z</em><sub>θ</sub>(φ) ~ <em>F</em>(μ, Σ). This module is constraint-agnostic.
-          </p>
-          <p>
-            <strong>Corrector step (DPPL).</strong> The DPPL solves a constrained least-squares
-            problem to project the unconstrained distribution onto the constraint manifold:
-          </p>
-          <p style="text-align:center; font-family: 'SFMono-Regular', monospace; background: var(--background-accent); border-radius: 8px; padding: 0.75rem 1.5rem; display: inline-block; margin: 0.5rem auto;">
-            u*(z) := argmin<sub>h(û)=0, g(û)≤0</sub> ‖û − z‖²<sub>Q</sub>
-          </p>
-          <p>
-            For <strong>location-scale distributions</strong>, this reduces to a closed-form parameter
-            update via the delta method: μ̂ = T(μ) and Σ̂ = J<sub>T</sub>(μ) Σ J<sub>T</sub>(μ)<sup>⊤</sup>,
-            where J<sub>T</sub> is the Jacobian of the projection map. For differentiating through the
-            corrector, we differentiate the KKT conditions via the implicit function theorem — requiring
-            only a <em>single linear solve</em>, regardless of how many solver iterations were needed.
-          </p>
-          <p>
-            <strong>Sampling-free training.</strong> By applying the DPPL directly to distribution
-            parameters (μ, Σ) and using a closed-form CRPS loss, ProbHardE2E avoids Monte Carlo
-            sampling entirely during training — cutting per-epoch time by <strong>3–5×</strong>.
+            ProbHardE2E uses a two-step <strong>predictor–corrector</strong> procedure.
+            The base model $f_\theta$ predicts distribution parameters
+            $(\boldsymbol{\mu}_\theta(\phi), \boldsymbol{\Sigma}_\theta(\phi))$
+            without constraint awareness (Predictor Step). The DPPL then restricts the parameter space
+            to $\bar{\Theta} \subseteq \Theta$ such that for all
+            $\hat{u}_\theta(\phi) \sim \mathbf{Y}_\theta(\phi)$, the constraints
+            $g(\hat{u}) \leq 0$ and $h(\hat{u}) = 0$ are satisfied (Corrector Step).
           </p>
 
-          <table class="constraint-table">
+          <p>
+            Equivalently, the DPPL can be formulated as a constrained least-squares problem on samples
+            of $\mathbf{Z}_\theta(\phi)$:
+          </p>
+          $$
+            u^*(z) \;:=\; \arg\min_{\substack{g(\hat{u})\leq 0,\; h(\hat{u})=0}} \|\hat{u} - z\|^2_Q
+          $$
+          <p>
+            where $\|x\|_Q = \sqrt{x^\top Q x}$ for some symmetric positive semi-definite matrix $Q$.
+          </p>
+          <p>
+            <strong>Location-scale distributions.</strong> When the prior belongs to a multivariate
+            location-scale family, the transformed distribution
+            $\mathbf{Y} = \mathcal{T}(\mathbf{Z})$ converges (to first order) to
+            $\mathcal{F}(\hat{\mu}, \hat{\Sigma})$ with:
+          </p>
+          $$
+            \hat{\mu} = \mathcal{T}(\mu), \qquad \hat{\Sigma} = J_{\mathcal{T}}(\mu)\,\Sigma\,J_{\mathcal{T}}(\mu)^\top
+          $$
+          <p>
+            where $J_{\mathcal{T}}(\mu)$ is the Jacobian of $\mathcal{T}$ at $\mu$. This dual-mode
+            design — projecting on parameters during training and on samples at inference — balances
+            training efficiency with strict constraint feasibility at inference.
+          </p>
+
+          <p>
+            <strong>Sampling-free training with closed-form CRPS.</strong> We use a closed-form
+            expression for the CRPS to enable an efficient, sample-free approach. Calculating the CRPS
+            for an arbitrary distribution requires generating samples, but closed-form expressions exist
+            for several location-scale distributions (Gaussian, logistic, Student's $t$, beta, gamma,
+            uniform). Models trained with 100 posterior samples per step incur a
+            $3.3$–$4.6\times$ increase in epoch time relative to ProbHardE2E, which avoids sampling
+            altogether. Note that the computational overhead of ProbHardE2E is approximately $2\times$
+            that of the unconstrained model.
+          </p>
+
+          <table class="method-table">
             <thead>
               <tr>
                 <th>Constraint Type</th>
-                <th>Solution u*(z)</th>
+                <th>Solution $\mathbf{u}^*(\mathbf{z})$</th>
                 <th>Solver</th>
-                <th>Jacobian J<sub>T</sub></th>
+                <th>Jacobian $\mathbf{J}_T$</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><strong>Linear Equality</strong></td>
-                <td>P<sub>Q⁻¹</sub> z + (I − P<sub>Q⁻¹</sub>) A<sup>†</sup>b</td>
+                <td>$\mathbf{P}_{\mathbf{Q}^{-1}}\mathbf{z} + (\mathbf{I}-\mathbf{P}_{\mathbf{Q}^{-1}})\mathbf{A}^\dagger\mathbf{b}$</td>
                 <td>Closed-form</td>
-                <td>P<sub>Q⁻¹</sub></td>
+                <td>$\mathbf{P}_{\mathbf{Q}^{-1}}$</td>
               </tr>
               <tr>
                 <td><strong>Nonlinear Equality</strong></td>
-                <td>(u*, λ*) s.t. R(u*, λ*; z) = 0</td>
+                <td>$(\mathbf{u}^*, \boldsymbol{\lambda}^*)$ s.t. $\mathcal{R}(\mathbf{u}^*, \boldsymbol{\lambda}^*;\mathbf{z})=\mathbf{0}$</td>
                 <td>Newton's method</td>
-                <td>Implicit differentiation</td>
+                <td>Implicit diff.</td>
               </tr>
               <tr>
                 <td><strong>Convex Inequality</strong></td>
-                <td>argmin<sub>h(û)≤0, g(û)≤0</sub> ‖û − z‖²<sub>Q</sub></td>
-                <td>Convex opt. solver</td>
-                <td>Sensitivity / argmin diff.</td>
+                <td>$\arg\min_{h(\hat{\mathbf{u}})\leq 0}\|\hat{\mathbf{u}}-\mathbf{z}\|^2_\mathbf{Q}$</td>
+                <td>Convex solver</td>
+                <td>Argmin diff.</td>
               </tr>
             </tbody>
           </table>
 
           <p>
-            The <strong>oblique projection</strong> (Q = Σ<sup>−1</sup>) corrects predictions along
-            covariance-weighted directions, preserving the true uncertainty structure around heteroscedastic
-            shocks and spikes. This outperforms the standard orthogonal projection (Q = I) in hard problems.
+            <strong>Oblique vs. orthogonal projection.</strong> The oblique projection
+            ($Q = \Sigma^{-1}$) corrects predictions along covariance-weighted directions,
+            better preserving the true uncertainty structure around shocks and spikes, performing
+            more effectively on problems with heteroscedastic data. For the "easy" (smooth) Heat
+            equation and "medium" tasks (PME and Advection), orthogonal projection ($Q = I$)
+            reduces CRPS by 10–30% and improves MSE by up to 33%. However, in the "hard" (sharp)
+            nonlinear Stefan problem, the oblique projection improves CRPS by more than 50%
+            compared to the orthogonal projection.
           </p>
         </div>
       </div>
     </div>
   </section>
-  <!-- End Method -->
 
 
-  <!-- ========== Results: Linear Constraints & Speedup ========== -->
+  <!-- ========== Results ========== -->
   <section class="section">
     <div class="container is-max-desktop">
       <div class="content-section">
-        <h2 class="title is-3">Results: Linear Constraints &amp; Computational Speedup</h2>
+        <h2 class="title is-3">Results</h2>
 
+        <!-- ── Computational Speedup ── -->
+        <h3 class="title is-4" style="margin-top: 2rem;">Computational Speedup</h3>
         <div class="content">
           <p>
-            We evaluate ProbHardE2E on five hierarchical time-series forecasting benchmarks (Labour,
-            Tourism, Tourism-Large, Traffic, Wiki) where predictions must satisfy aggregation coherency
-            constraints (linear equality). ProbHardE2E uses DeepVAR as the probabilistic backbone
-            with an oblique projection and closed-form CRPS.
+            Models trained with 100 posterior samples per training step incur a
+            $3.3$–$4.6\times$ increase in epoch time relative to ProbHardE2E, which avoids sampling
+            altogether by using a closed-form CRPS loss and projecting directly on the distribution
+            parameters.
           </p>
-          <p>
-            <strong>Speedup.</strong> Projecting directly on distribution parameters and using the
-            closed-form CRPS eliminates Monte Carlo sampling during training.
-            Models trained with 100 posterior samples per step (HierE2E baseline) incur a
-            <strong>3.3–4.6× increase</strong> in epoch time — our method avoids this overhead entirely.
-          </p>
-
-          <div class="paper-figure">
-            <img src="static/images/framework.png"
-              alt="Training time per iteration: ProbHardE2E vs HierE2E on five time-series datasets"
-              loading="lazy">
-            <figcaption>
-              <strong>Training time per iteration (seconds)</strong> for ProbHardE2E vs. HierE2E
-              on five hierarchical time-series datasets. ProbHardE2E (sampling-free) is consistently
-              3–5× faster while maintaining exact coherency (CE = 0).
-            </figcaption>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1.75rem 0; align-items:center;">
+            <figure style="margin:0;">
+              <img src="static/images/timing_ts_bar_sorted.png"
+                alt="Training time per iteration on time-series datasets"
+                loading="lazy"
+                style="width:100%; display:block; border-radius:var(--border-radius); border:1px solid var(--border-color); background:#fff;">
+              <figcaption style="margin-top:0.55rem; font-size:0.85rem; color:var(--text-secondary); text-align:center; line-height:1.5;">
+                Average time per iteration (in seconds) for ProbHardE2E compared to HierE2E on five hierarchical time-series datasets.
+              </figcaption>
+            </figure>
+            <figure style="margin:0;">
+              <img src="static/images/pde_timing_sampling.png"
+                alt="Training time per epoch on PDE benchmarks"
+                loading="lazy"
+                style="width:100%; display:block; border-radius:var(--border-radius); border:1px solid var(--border-color); background:#fff;">
+              <figcaption style="margin-top:0.55rem; font-size:0.85rem; color:var(--text-secondary); text-align:center; line-height:1.5;">
+                Time per epoch (seconds) for PDE benchmarks: sampling-free (ProbHardE2E) vs. with sampling (100 posterior samples/step).
+              </figcaption>
+            </figure>
           </div>
-
-          <p>
-            <strong>Accuracy.</strong> Across the five datasets, ProbHardE2E achieves state-of-the-art
-            CRPS on Labour, Tourism-Large, and Wiki, remaining highly competitive on Tourism and Traffic.
-            Training with CRPS consistently outperforms NLL-trained models — even on NLL evaluation metrics —
-            validating the use of a strictly proper scoring rule as the training objective in scientific ML.
-          </p>
         </div>
-      </div>
-    </div>
-  </section>
 
+        <hr class="section-divider">
 
-  <!-- ========== Results: Nonlinear Equality (PME) ========== -->
-  <section class="section hero is-light">
-    <div class="container is-max-desktop">
-      <div class="content-section">
-        <h2 class="title is-3">Results: Nonlinear Equality Constraints — Porous Medium Equation</h2>
-
+        <!-- ── Linear Constraints: Time-Series ── -->
+        <h3 class="title is-4">Linear Constraints in Hierarchical Time-Series</h3>
         <div class="content">
           <p>
-            We test ProbHardE2E on the Porous Medium Equation (PME), a nonlinear PDE with a
-            conservation constraint k(u) that controls the sharpness of the solution (larger m → sharper
-            transition / harder problem). This requires the full nonlinear equality projection with
-            implicit differentiation of the KKT system.
-          </p>
-          <p>
-            End-to-end training with the nonlinear constraint achieves up to
-            <strong>15–17× lower MSE</strong> and <strong>2.5× better CRPS</strong> compared to
-            applying the constraint only at inference time (ProbHardInf), demonstrating that the
-            constraint must be enforced <em>during</em> training to realize its full benefit.
+            We evaluate ProbHardE2E on five hierarchical time-series forecasting benchmark datasets,
+            where the goal is to generate probabilistic predictions that are coherent with known
+            aggregation constraints across cross-sectional hierarchies. ProbHardE2E uses DeepVAR as
+            the probabilistic base model. Across five diverse datasets, ProbHardE2E achieves
+            state-of-the-art CRPS on Labour, Tourism-L, and Wiki. On Tourism and Traffic it remains
+            highly competitive, outperforming traditional approaches (ARIMA, ETS) and offering
+            comparable performance to specialized methods (PERMBU-MINT, HierE2E).
           </p>
 
-          <div class="comparison-grid">
-            <div class="comparison-item">
-              <figure>
-                <img src="static/images/pme_probconserv.png"
-                  alt="ProbConserv on PME: wider uncertainty, constraint at inference only"
-                  loading="lazy">
-              </figure>
-              <figcaption class="cap-bad">
-                <strong>ProbConserv</strong> — linear constraint at inference only.
-                Wide 3σ bands; less accurate shock capture.
-              </figcaption>
-            </div>
-            <div class="comparison-item">
-              <figure>
-                <img src="static/images/pme_e2e.png"
-                  alt="ProbHardE2E on PME: tighter uncertainty, nonlinear constraint end-to-end"
-                  loading="lazy">
-              </figure>
-              <figcaption class="cap-good">
-                <strong>ProbHardE2E</strong> — nonlinear constraint end-to-end.
-                Tighter 3σ bounds; sharper, more accurate shock prediction.
-              </figcaption>
-            </div>
+          <div class="callout">
+            Training with the proper scoring rule CRPS improves UQ across nearly all datasets
+            compared to training with the commonly-used NLL. The CRPS training objective also improves
+            mean accuracy (MSE) in approximately three-quarters of the dataset–model experiments.
           </div>
 
-          <p>
-            The figure above shows mean ± 3σ predictions for the PME with conservation constraint at
-            time t = 0.51. The training parameter m<sub>train</sub> ∈ [3, 4] and test parameter
-            m<sub>test</sub> = 3.88. ProbHardE2E (right) captures the sharp front significantly better
-            than the linear-constraint-at-inference baseline (left).
+          <div style="overflow-x:auto; margin: 1.5rem -1rem;">
+          <table class="results-table" style="min-width:700px;">
+            <thead>
+              <tr>
+                <th class="left">Dataset</th>
+                <th style="text-align:left;">ProbHardE2E-Ob</th>
+                <th style="text-align:left;">ProbHardE2E-Or</th>
+                <th style="text-align:left;">ProbConserv</th>
+                <th style="text-align:left;">HierE2E</th>
+                <th style="text-align:left;">ARIMA-NaïveBU</th>
+                <th style="text-align:left;">ETS-NaïveBU</th>
+                <th style="text-align:left;">PERMBU-MINT</th>
+                <th style="text-align:left;">DeepVAR (base)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="row-label">Labour</td>
+                <td>36.1±2.7 (CE=0)</td>
+                <td class="best">28.6±6.5 (CE=0)</td>
+                <td>45.8±6.5 (CE=0)</td>
+                <td>50.5±20.6 (CE=0)</td>
+                <td>45.3 (CE=0)</td>
+                <td>43.2 (CE=0)</td>
+                <td>39.3 (CE=0)</td>
+                <td>38.2±4.5 (CE=0.215)</td>
+              </tr>
+              <tr class="group-sep">
+                <td class="row-label">Tourism</td>
+                <td>98.9±13.0 (CE=0)</td>
+                <td>82.4±6.6 (CE=0)</td>
+                <td>100.7±7.7 (CE=0)</td>
+                <td>103.1±16.3 (CE=0)</td>
+                <td>113.8 (CE=0)</td>
+                <td>100.8 (CE=0)</td>
+                <td class="best">77.1 (CE=0)</td>
+                <td>92.5±2.2 (CE=2818)</td>
+              </tr>
+              <tr class="group-sep">
+                <td class="row-label">Tourism-L</td>
+                <td class="best">155.2±3.6 (CE=0)</td>
+                <td>156.4±9.4 (CE=0)</td>
+                <td>176.9±21.5 (CE=0)</td>
+                <td>161.3±10.9 (CE=0)</td>
+                <td>174.1 (CE=0)</td>
+                <td>169.0 (CE=0)</td>
+                <td>—</td>
+                <td>158.1±10.2 (CE=70000)</td>
+              </tr>
+              <tr class="group-sep">
+                <td class="row-label">Traffic</td>
+                <td>55.0±10.6 (CE=0)</td>
+                <td>60.6±7.8 (CE=0)</td>
+                <td>71.0±3.9 (CE=0)</td>
+                <td class="best">41.8±7.8 (CE=0)</td>
+                <td>80.8 (CE=0)</td>
+                <td>66.5 (CE=0)</td>
+                <td>67.7 (CE=0)</td>
+                <td>40.0±2.6 (CE=0.192)</td>
+              </tr>
+              <tr class="group-sep">
+                <td class="row-label">Wiki</td>
+                <td class="best">212.1±29.4 (CE=0)</td>
+                <td>215.8±16.9 (CE=0)</td>
+                <td>264.7±30.7 (CE=0)</td>
+                <td>216.5±26.7 (CE=0)</td>
+                <td>377.2 (CE=0)</td>
+                <td>467.3 (CE=0)</td>
+                <td>281.2 (CE=0)</td>
+                <td>229.4±15.8 (CE=8399)</td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+          <p class="table-caption">
+            <strong>Table 1.</strong> CRPS ×10⁻³ for hierarchical time-series datasets across various probabilistic forecasting algorithms. Constraint (coherency) error (CE) is given in parenthesis and is equal to 0 for all methods except the base unconstrained DeepVAR. PERMBU-MINT is not available for Tourism-L because the dataset has a nested hierarchical structure. ARIMA-NaiveBU, ETS-NaiveBU, and PERMBU-MINT are deterministic models with no model uncertainty. Bold = best.
           </p>
         </div>
-      </div>
-    </div>
-  </section>
 
+        <hr class="section-divider">
 
-  <!-- ========== Results: Convex Inequality (TVD) ========== -->
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="content-section">
-        <h2 class="title is-3">Results: Convex Inequality Constraints — Total Variation Diminishing</h2>
-
+        <!-- ── PDE Results ── -->
+        <h3 class="title is-4">General Nonlinear Equality and Convex Inequality Constraints</h3>
         <div class="content">
           <p>
-            We impose a <strong>Total Variation Diminishing (TVD)</strong> convex relaxation — a constraint
-            commonly used in numerical PDE methods to prevent non-physical oscillations near shocks.
-            The discrete TVD reads:
-            TVD = Σ<sub>n,i</sub> |u(x<sub>i+1</sub>, t<sub>n</sub>) − u(x<sub>i</sub>, t<sub>n</sub>)|.
+            <strong>Nonlinear Equality — Porous Medium Equation (PME).</strong>
+            We test ProbHardE2E with general nonlinear constraints using nonlinear conservation laws
+            from PDEs. Even in this challenging case, the constraint error (CE) on the samples is 0,
+            ensuring strict feasibility. We see an MSE improvement of at most $\approx 15$–$17\times$
+            when trained on CRPS, and CRPS improvement of at most $\approx 2.5\times$ for
+            $m \in [2,3]$ over baselines that apply the nonlinear constraint just at inference time
+            (ProbHardInf), as a reduced linear constraint (ProbConserv), and the unconstrained model
+            (VarianceNO). ProbHardE2E is able to significantly better capture the shock and has tighter
+            uncertainty estimates, leading to lower CRPS values than the baselines.
           </p>
           <p>
-            This is a convex inequality constraint; its projection requires a convex optimization solver
-            and argmin differentiation for the Jacobian. ProbHardE2E handles this automatically via the DPPL.
+            <strong>Convex Inequality — TVD (Linear Advection).</strong>
+            We impose a convex relaxation of the total variation diminishing (TVD) constraint, commonly
+            used in numerical methods for PDEs to minimize artificial oscillations:
+            $\text{TVD} = \sum_{n,i} |u(t_n, x_{i+1}) - u(t_n, x_i)|$.
+            Imposing this TVD relaxation improves shock location prediction compared to the unconstrained
+            model. ProbHardE2E has smaller variance compared to both ProbConserv and VarianceNO, is less
+            likely to predict non-physical negative samples, and has a smaller variance peak above the
+            shock — hence less prone to oscillations than the baselines.
           </p>
 
-          <div class="paper-figure">
-            <img src="static/images/lin_adv_tvd.svg"
-              alt="Linear advection with TVD constraint: ProbHardE2E vs baselines at t=0.51"
-              loading="lazy"
-              style="background: #fff; padding: 0.75rem;">
-            <figcaption>
-              <strong>Linear advection with TVD constraint (t = 0.51),</strong> β<sub>train</sub> ∈ [1, 2],
-              β<sub>test</sub> = 1.5. ProbHardE2E (teal) shows smaller variance than ProbConserv and
-              VarianceNO, is less prone to predicting non-physical negative samples, and has a smaller
-              variance peak above the shock — reducing artificial oscillations.
-            </figcaption>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ========== Results: Hard PDE — Stefan ========== -->
-  <section class="section hero is-light">
-    <div class="container is-max-desktop">
-      <div class="content-section">
-        <h2 class="title is-3">Results: Hard PDE — Stefan Problem (Oblique vs Orthogonal Projection)</h2>
-
-        <div class="content">
-          <p>
-            The Stefan problem is a free-boundary PDE with a sharp discontinuity at the phase-change front —
-            the hardest benchmark in our suite. Here, the oblique projection (Q = Σ<sup>−1</sup>) in
-            ProbHardE2E improves CRPS by <strong>more than 50%</strong> over the orthogonal variant
-            (ProbHardE2E-Or, Q = I).
-          </p>
-          <p>
-            The oblique projection corrects predictions along covariance-weighted directions, better
-            preserving the heteroscedastic uncertainty structure near the sharp moving boundary.
-            Orthogonal projection — which treats all dimensions equally — loses this structure.
-          </p>
-
-          <div class="comparison-grid">
-            <div class="comparison-item">
-              <figure>
-                <img src="static/images/stefan_probconserv.png"
-                  alt="ProbConserv on Stefan: constraint at inference only"
+          <div class="fig-grid-2">
+            <figure>
+              <div class="img-wrap">
+                <img src="static/images/nonlinear_PME_CRPS_m3_88_1.png"
+                  alt="ProbHardE2E on PME: all methods compared"
                   loading="lazy">
-              </figure>
-              <figcaption class="cap-bad">
-                <strong>ProbConserv</strong> — constraint at inference, orthogonal projection.
-                Wider uncertainty at the sharp interface.
+              </div>
+              <figcaption>
+                <strong>Nonlinear Equality:</strong> Mean ±3 standard deviation for the PME with conservation constraint at time $t=0.51$, with PDE parameter $m_\text{train}\in[3,4]$ and $m_\text{test}=3.88$. Horizontal axis zoomed in to highlight uncertainty near the propagating front.
               </figcaption>
-            </div>
-            <div class="comparison-item">
-              <figure>
-                <img src="static/images/stefan_e2e.png"
-                  alt="ProbHardE2E on Stefan: end-to-end oblique projection"
+            </figure>
+            <figure>
+              <div class="img-wrap">
+                <img src="static/images/advection_tvd.png"
+                  alt="Linear advection with TVD constraint: ProbHardE2E vs baselines"
                   loading="lazy">
-              </figure>
-              <figcaption class="cap-good">
-                <strong>ProbHardE2E</strong> — end-to-end oblique projection.
-                Tighter, better-calibrated uncertainty near the phase-change front.
+              </div>
+              <figcaption>
+                <strong>Convex Inequality:</strong> Mean ±3 standard deviation for linear advection with TVD constraint at time $t=0.51$, with PDE parameter $\beta_\text{train}\in[1,2]$ and $\beta_\text{test}=1.5$. Horizontal axis zoomed in to highlight uncertainty near the propagating front.
               </figcaption>
-            </div>
+            </figure>
           </div>
+
+          <div style="overflow-x:auto; margin: 1.5rem -1rem;">
+          <table class="results-table" style="min-width:900px;">
+            <thead>
+              <tr>
+                <th class="left" rowspan="2">PDE</th>
+                <th rowspan="2" style="text-align:left;">Metric</th>
+                <th colspan="2">ProbHardE2E-Ob</th>
+                <th colspan="2">ProbHardE2E-Or</th>
+                <th colspan="2">HardC</th>
+                <th colspan="2">ProbConserv</th>
+                <th colspan="2">SoftC</th>
+                <th colspan="2">VarianceNO (base)</th>
+              </tr>
+              <tr>
+                <th>CRPS</th><th>NLL</th>
+                <th>CRPS</th><th>NLL</th>
+                <th>CRPS</th><th>NLL</th>
+                <th>CRPS</th><th>NLL</th>
+                <th>CRPS</th><th>NLL</th>
+                <th>CRPS</th><th>NLL</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="row-label" rowspan="3">Heat<br><small style="font-weight:400;color:#94a3b8;">(Easy)</small></td>
+                <td class="metric">MSE</td>
+                <td>0.036</td><td>0.047</td>
+                <td>0.031</td><td>0.301</td>
+                <td>0.031</td><td>0.090</td>
+                <td class="best">0.027</td><td>1.26</td>
+                <td>0.051</td><td>0.156</td>
+                <td>0.029</td><td>2.01</td>
+              </tr>
+              <tr>
+                <td class="metric">CE</td>
+                <td class="best">0</td><td class="best">0</td>
+                <td class="best">0</td><td class="best">0</td>
+                <td class="best">0</td><td class="best">0</td>
+                <td class="best">0</td><td class="best">0</td>
+                <td>0.852</td><td>4.806</td>
+                <td>1.76</td><td>34.3</td>
+              </tr>
+              <tr>
+                <td class="metric">CRPS</td>
+                <td>0.304</td><td>0.37</td>
+                <td class="best">0.271</td><td>0.713</td>
+                <td>0.275</td><td>0.452</td>
+                <td>0.392</td><td>4.27</td>
+                <td>0.354</td><td>1.129</td>
+                <td>0.396</td><td>4.39</td>
+              </tr>
+              <tr class="group-sep">
+                <td class="row-label" rowspan="3">PME<br><small style="font-weight:400;color:#94a3b8;">(Medium)</small></td>
+                <td class="metric">MSE</td>
+                <td>9.59</td><td class="best">6.16</td>
+                <td>9.01</td><td>11.08</td>
+                <td>8.870</td><td>10.55</td>
+                <td>8.801</td><td>10.5</td>
+                <td>8.187</td><td>7.362</td>
+                <td>7.945</td><td>8.132</td>
+              </tr>
+              <tr>
+                <td class="metric">CE</td>
+                <td class="best">0</td><td class="best">0</td>
+                <td class="best">0</td><td class="best">0</td>
+                <td class="best">0</td><td class="best">0</td>
+                <td class="best">0</td><td class="best">0</td>
+                <td>17.091</td><td>29.31</td>
+                <td>20.19</td><td>27.2</td>
+              </tr>
+              <tr>
+                <td class="metric">CRPS</td>
+                <td>2.01</td><td>2.65</td>
+                <td>1.798</td><td>1.80</td>
+                <td>1.785</td><td class="best">1.667</td>
+                <td>2.03</td><td>2.49</td>
+                <td>2.065</td><td>2.444</td>
+                <td>2.02</td><td>2.43</td>
+              </tr>
+              <tr class="group-sep">
+                <td class="row-label" rowspan="3">Advection<br><small style="font-weight:400;color:#94a3b8;">(Medium)</small></td>
+                <td class="metric">MSE</td>
+                <td>131</td><td>262</td>
+                <td class="best">88.09</td><td>310.82</td>
+                <td>103.78</td><td>458.38</td>
+                <td>134</td><td>277</td>
+                <td>148.11</td><td>599.11</td>
+                <td>149</td><td>605</td>
+              </tr>
+              <tr>
+                <td class="metric">CE</td>
+                <td class="best">0</td><td class="best">0</td>
+                <td class="best">0</td><td class="best">0</td>
+                <td class="best">0</td><td class="best">0</td>
+                <td class="best">0</td><td class="best">0</td>
+                <td>19.334</td><td>182.99</td>
+                <td>18.9</td><td>182</td>
+              </tr>
+              <tr>
+                <td class="metric">CRPS</td>
+                <td>4.19</td><td>7.03</td>
+                <td class="best">2.94</td><td>8.669</td>
+                <td>3.236</td><td>11.23</td>
+                <td>3.88</td><td>7.90</td>
+                <td>3.963</td><td>9.702</td>
+                <td>3.98</td><td>10.1</td>
+              </tr>
+              <tr class="group-sep">
+                <td class="row-label" rowspan="3">Stefan<br><small style="font-weight:400;color:#94a3b8;">(Hard)</small></td>
+                <td class="metric">MSE</td>
+                <td class="best">186</td><td>207</td>
+                <td>394.84</td><td>432.92</td>
+                <td>394.29</td><td>433.28</td>
+                <td>303</td><td>273</td>
+                <td>431.89</td><td>429.06</td>
+                <td>425</td><td>425</td>
+              </tr>
+              <tr>
+                <td class="metric">CE</td>
+                <td class="best">0</td><td class="best">0</td>
+                <td class="best">0</td><td class="best">0</td>
+                <td class="best">0</td><td class="best">0</td>
+                <td class="best">0</td><td class="best">0</td>
+                <td>166.93</td><td>168.75</td>
+                <td>180</td><td>169</td>
+              </tr>
+              <tr>
+                <td class="metric">CRPS</td>
+                <td class="best">7.52</td><td>7.85</td>
+                <td>14.147</td><td>14.67</td>
+                <td>14.432</td><td>14.539</td>
+                <td>7.85</td><td>8.33</td>
+                <td>9.878</td><td>10.062</td>
+                <td>9.51</td><td>10.2</td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+          <p class="table-caption">
+            <strong>Table 2.</strong> Test metrics on constrained PDEs across four datasets, ordered top to bottom by learning difficulty. Metrics: MSE ×10⁻⁵, constraint (conservation) error CE ×10⁻³, and CRPS ×10⁻³. Each algorithm trained with either CRPS or NLL. Ob. = oblique ($Q=\Sigma^{-1}$), Or. = orthogonal ($Q=I$). Best values per row in bold.
+          </p>
         </div>
+
       </div>
     </div>
   </section>
@@ -736,38 +986,24 @@
         <div class="content">
           <p>
             ProbHardE2E seamlessly incorporates constraints ranging from commonly used linear constraints
-            to challenging nonlinear constraints into black-box probabilistic deep learning models via
-            the Differentiable Probabilistic Projection Layer (DPPL). We show that our work is applicable
-            in a wide range of scientific domains: linear coherency constraints in hierarchical time-series
-            forecasting, and nonlinear conservation laws in PDE surrogate modeling.
+            to challenging nonlinear constraints into black-box probabilistic deep learning models using a
+            differentiable probabilistic projection layer (DPPL). It is applicable in a wide range of
+            scientific and operational domains, ranging from linear coherency constraints in time series
+            forecasting to nonlinear conservation laws in solving PDEs.
           </p>
           <p>
-            Contrary to prior work that only supports linear global conservation constraints, ProbHardE2E
-            supports nonlinear conservation constraints. We also demonstrate that training with the
-            distribution-agnostic CRPS consistently outperforms NLL — a lesson transferable from
-            forecasting to SciML. Future work includes local conservation constraints (finite-volume style),
-            non-convex inequality constraints, and richer covariance parameterizations (low-rank / dense).
+            Contrary to prior works which only support linear global conservation constraints,
+            ProbHardE2E supports nonlinear conservation constraints. This paves the way for future work
+            to enforce conservation locally over sub-regions or over control volumes à la finite volume
+            methods. Future work also includes extending to handle general non-convex, nonlinear
+            inequality constraints using advanced optimization techniques or relaxations, to richer
+            covariance parameterizations (e.g., low-rank or dense), and to empirical distributions
+            other than location-scale families by sample projection.
           </p>
         </div>
       </div>
     </div>
   </section>
-
-
-  <!-- ========== Poster ========== -->
-  <section class="hero is-small is-light" id="poster">
-    <div class="hero-body">
-      <div class="container">
-        <h2 class="title">Poster</h2>
-        <iframe class="poster-frame" src="static/pdfs/poster.pdf"
-          title="ProbHardE2E ICLR 2026 Poster"></iframe>
-        <p style="text-align:center; margin-top: 0.75rem; color: var(--text-secondary); font-size: 0.9rem;">
-          ICLR 2026 Poster — <a href="static/pdfs/poster.pdf" target="_blank" rel="noopener noreferrer">Download PDF</a>
-        </p>
-      </div>
-    </div>
-  </section>
-  <!-- End Poster -->
 
 
   <!-- ========== BibTeX ========== -->
@@ -790,7 +1026,6 @@
 }</code></pre>
     </div>
   </section>
-  <!-- End BibTeX -->
 
   </main>
 
